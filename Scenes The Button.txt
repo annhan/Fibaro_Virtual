@@ -1,0 +1,32 @@
+--[[
+%% properties
+%% events
+1093 CentralSceneEvent 1
+%% globals
+--]]
+
+function nhankhan()
+  		fibaro:debug("Khan Cap")
+end
+function sangden()
+  		fibaro:debug("Sang Den")
+end
+
+local trigger = fibaro:getSourceTrigger();
+local kieunhan = trigger["event"]["data"]["keyAttribute"]
+fibaro:debug(kieunhan)
+if kieunhan=="Pressed" then
+  nhankhan()
+  fibaro:debug("Nhan 1")
+elseif kieunhan=="Pressed2" then
+  sangden()
+  fibaro:debug("Nhan 2")
+elseif kieunhan=="Pressed3" then
+  fibaro:debug("Nhan 3")
+  elseif kieunhan=="Pressed4" then
+  fibaro:debug("Nhan 4")
+elseif kieunhan=="HeldDown" then
+  	nhankhan()
+  fibaro:debug("Nhan giu")
+end
+

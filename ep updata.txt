@@ -1,0 +1,1 @@
+http://hc2-ip/services/startUpgrade.php
