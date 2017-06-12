@@ -1,0 +1,33 @@
+
+function DEC_HEX(IN)
+    local B,K,OUT,I,D=16,"0123456789ABCDEF","",0
+    while IN>0 do
+        I=I+1
+        IN,D=math.floor(IN/B),math.mod(IN,B)+1
+        OUT=string.sub(K,D,D)..OUT
+    end
+    return OUT
+end
+function num2hex(num)
+    local hexstr = '0123456789abcdef'
+    local s = ''
+    while num > 0 do
+        local mod = math.fmod(num, 16)
+        s = string.sub(hexstr, mod+1, mod+1) .. s
+        num = math.floor(num / 16)
+    end
+    if s == '' then s = '0' end
+    return s
+end
+function str2hex(str)
+    local hex = ''
+  
+    while #str > 0 do
+
+        local hb = num2hex(string.byte(str, 1, 1))
+        if #hb < 2 then hb = '0' .. hb end
+        hex = hex .. hb .."-"
+        str = string.sub(str, 2)
+    end
+    return hex
+end
